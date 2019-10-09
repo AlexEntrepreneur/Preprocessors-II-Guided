@@ -1,33 +1,37 @@
 // VARIABLES
-@normal-font-size: 1.6rem;
-@medium-font-size: 1.8rem;
-@large-font-size: 2.5rem;
-@extra-large-font-size: 3.5rem;
-@sky-blue: dodgerblue;
-@white: rgba(255, 255, 255, 0.9);
-@green: rgb(11, 203, 11);
-@mobile-small: ~"(max-width: 450px)";
+// Colors
+@primary-color: dodgerblue;
+@light-text-color: rgb(231, 231, 231);
+@light-border-color: rgb(154, 154, 154);
+@bg-color: #202020;
 
-// MIXINS
-.bold-green() {
-  color: @green;
-  font-weight: bold;
-}
+// Spacing
 
+// Device widths
+@mobile : 515px;
+@tablet-big: 800px;
+@tablet: 700px;
 
 // STYLES
 html {
   box-sizing: border-box;
   font-size: 62.5%;
   font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: @bg-color;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+body {
+  color: @light-text-color;
+}
+
 h1, h2, h3, h4, h5 {
-  font-size: @large-font-size;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 
 img {
@@ -36,44 +40,57 @@ img {
 }
 
 p {
-  line-height: 1.25;
   margin: 20px 0;
-  font-size: @normal-font-size;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
 }
 
 a {
-  color: @sky-blue;
   text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  padding: .5em;
+  min-width: 150px;
+  border-radius: 5px;
+  border: none;
+  font-size: 2rem;
+  line-height: 1em;
+  background-color: white;
+  color: #202020;
+  cursor: pointer;
+}
+
+.button.primary {
+  background-color: @primary-color;
+  color: white;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
-  font-size: @normal-font-size;
+  font-size: 1.6rem;
 }
 
 strong {
   font-weight: bold;
-  color: @sky-blue;
+  color: @primary-color;
 }
 
 header {
-  border-bottom: 1px solid black;
-  margin: 20px 0;
-  padding: 20px 0;
+  border-bottom: 1px solid @light-border-color;
+  padding: 30px 0;
   display: flex;
   justify-content: space-between;
 
-
-  @media(max-width: 515px) {
-    flex-direction: column;
-    align-items: center;
-  }
-
   h1 {
-    font-size: @large-font-size;
+    font-size: 3rem;
+    text-align: center;
 
-    @media(max-width: 515px) {
+    @media(max-width: @tablet-big) {
       margin-bottom: 20px;
     }
   }
@@ -83,18 +100,60 @@ header {
     align-items: center;
     margin-left: 62px;
 
-    @media(max-width: 515px) {
-      margin-left: 0;
-    }
-
     a {
       margin-left: 20px;
-      font-size: @medium-font-size;
-      .bold-green();
+      font-size: 1.8rem;
+      
     }
 
     .first-anchor {
       margin-left: 0;
+    }
+
+    @media(max-width: @tablet-big) {
+      margin-left: 0;
+    }
+  }
+
+  @media(max-width: @tablet-big) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.header-img-container {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.header-img-content {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  h1 {
+    font-size: 5.4rem;
+    color: white;
+    margin-bottom: 20px;
+
+    @media(max-width: @tablet) {
+      font-size: 3.8rem;
+    }
+  }
+}
+
+.cta-buttons-container {
+  @media(max-width: @tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      max-width: 250px;
+      margin-bottom: 12px;
     }
   }
 }
@@ -102,59 +161,48 @@ header {
 .main-content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
 
-  @media(max-width: 515px) {
+@media(max-width: @mobile) {
+  .main-content {
     flex-direction: column;
   }
+}
 
-  section {
-    margin: 20px 2.5%;
-    width: 45%;
+.main-content section {
+  width: 50%;
+  padding: 0 16px;
+}
 
-    @media(max-width: 515px) {
-      width: 90%;
-    }
+@media(max-width: @mobile) {
+  .main-content section {
+    width: 100%;
   }
 }
 
 .main-footer {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
   display: flex;
   justify-content: center;
-  border-top: 1px dashed black;
-  padding-top: 20px;
-
+  border-top: 1px solid rgb(154, 154, 154);
+  padding-top: 40px;
+  
   nav {
     width: 90%;
     display: flex;
     justify-content: space-around;
-
-    a {
-      .bold-green();
-    }
   }
 }
 
 .book-flight-btn {
   display: block;
-  background-color: @sky-blue;
-  color: @white;
-  margin: 0 10px 20px;
-  cursor: pointer;
-  min-width: 200px;
-  height: 45px;
-  font-size: @large-font-size;
-  border-radius: 5px;
-  border: none;
+  margin: 0 auto 40px;
 
-  @media( max-width: 515px ) {
-    width: 90%;
-    height: 50px;
-    font-size: @extra-large-font-size;
-  }
-
-  @media @mobile-small {
-    background: @green;
-    color: @white;
-  }
+  @media(max-width: 515px) {
+      width: 90%;
+      height: 50px;
+      font-size: 2.5rem;
+    }
 }
