@@ -87,10 +87,18 @@ a {
   line-height: 1em;
   .button-style(#202020, white, 2rem);
   cursor: pointer;
-}
+  
+  &:hover {
+    background-color: darken(white, 10%);
+  }
+  
+  &.primary {
+    .button-style(white, @primary-color, 2rem);
 
-.button.primary {
-  .button-style(white, @primary-color);
+    &:hover {
+      background-color: darken(@primary-color, 15%);
+    }
+  }
 }
 
 .container {
@@ -120,7 +128,7 @@ header {
   }
 
   nav {
-    .flexbox(,,center,);
+    .flexbox(null, null, center, null);
     margin-left: 62px;
 
     a {
@@ -133,13 +141,13 @@ header {
       margin-left: 0;
     }
 
-    @media(max-width: @tablet-big) {
+    @media @tablet-big {
       margin-left: 0;
     }
   }
 
-  @media(max-width: @tablet-big) {
-    .flexbox(column,,center);
+  @media @tablet-big {
+    .flexbox(column, null, center, null);
   }
 }
 
@@ -161,15 +169,15 @@ header {
     color: white;
     margin-bottom: 20px;
 
-    @media(max-width: @tablet) {
+    @media @tablet {
       font-size: 3.8rem;
     }
   }
 }
 
 .cta-buttons-container {
-  @media(max-width: @tablet) {
-    .flexbox(column, center, center,);
+  @media @tablet {
+    .flexbox(column, center, center, null);
 
     button {
       max-width: 250px;
@@ -179,12 +187,12 @@ header {
 }
 
 .main-content {
-  .flexbox(row, space-between, stretch, wrap);
+  .flexbox( , space-between, stretch, wrap);
   display: flex;
   margin-bottom: 70px;
 }
 
-@media(max-width: @mobile) {
+@media @mobile {
   .main-content {
     flex-direction: column;
   }
@@ -195,7 +203,7 @@ header {
   padding: 0 16px;
 }
 
-@media(max-width: @mobile) {
+@media @mobile {
   .main-content section {
     width: 100%;
   }
@@ -217,7 +225,7 @@ header {
   display: block;
   margin: 0 auto 40px;
 
-  @media(max-width: 515px) {
+  @media @mobile {
       width: 90%;
       height: 50px;
       font-size: 2.5rem;
