@@ -26,6 +26,12 @@
   flex-wrap: @wrap;
 }
 
+.button-style() {
+  // color
+  // background-color
+  // font-size
+}
+
 // STYLES
 html {
   box-sizing: border-box;
@@ -110,7 +116,7 @@ header {
   }
 
   nav {
-    .flex-center();
+    .flexbox(row, flex-start, center, nowrap);
     margin-left: 62px;
 
     a {
@@ -170,9 +176,8 @@ header {
 }
 
 .main-content {
+  .flexbox(row, space-between, stretch, wrap);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin-bottom: 70px;
 }
 
@@ -195,15 +200,13 @@ header {
 
 .main-footer {
   margin-bottom: 70px;
-  display: flex;
-  justify-content: center;
+  .flexbox(row, center, stretch, nowrap);
   border-top: 1px solid rgb(154, 154, 154);
   padding-top: 40px;
   
   nav {
     width: 90%;
-    display: flex;
-    justify-content: space-around;
+    .flexbox(row, space-around, stretch, nowrap);
   }
 }
 
