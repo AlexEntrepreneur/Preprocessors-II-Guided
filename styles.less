@@ -12,6 +12,20 @@
 @tablet-big: 800px;
 @tablet: 700px;
 
+// MIXINS
+.flex-center() {
+  display: flex;
+  align-items: center;
+}
+
+.flexbox(@flex-dir, @just-cont, @align-items, @wrap) {
+  display: flex;
+  flex-direction: @flex-dir;
+  justify-content: @just-cont;
+  align-items: @align-items;
+  flex-wrap: @wrap;
+}
+
 // STYLES
 html {
   box-sizing: border-box;
@@ -96,8 +110,7 @@ header {
   }
 
   nav {
-    display: flex;
-    align-items: center;
+    .flex-center();
     margin-left: 62px;
 
     a {
@@ -147,9 +160,7 @@ header {
 
 .cta-buttons-container {
   @media(max-width: @tablet) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .flexbox(column, center, center, nowrap);
 
     button {
       max-width: 250px;
