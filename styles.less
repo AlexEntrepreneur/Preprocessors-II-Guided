@@ -8,9 +8,14 @@
 // Spacing
 
 // Device widths
-@mobile : 515px;
-@tablet-big: 800px;
-@tablet: 700px;
+@mobile-width : 515px;
+@tablet-big-width: 800px;
+@tablet-width: 700px;
+
+// Media Queries
+@mobile: ~"(max-width: 515px)";
+@tablet: ~"(max-width: 700px)";
+@tablet-big: ~"(max-width: 800px)";
 
 // MIXINS
 .flex-center() {
@@ -109,7 +114,7 @@ header {
     font-size: 3rem;
     text-align: center;
 
-    @media(max-width: @tablet-big) {
+    @media @tablet-big {
       margin-bottom: 20px;
     }
   }
