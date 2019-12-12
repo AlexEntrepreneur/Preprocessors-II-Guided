@@ -26,10 +26,12 @@
   flex-wrap: @wrap;
 }
 
-.button-style() {
-  // color
-  // background-color
-  // font-size
+
+// Amin
+.button-style(@color, @bg-color, @font-size) {
+  color: @color;
+  background-color: @bg-color;
+  font-size: @font-size;
 }
 
 // STYLES
@@ -77,16 +79,13 @@ a {
   min-width: 150px;
   border-radius: 5px;
   border: none;
-  font-size: 2rem;
   line-height: 1em;
-  background-color: white;
-  color: #202020;
+  .button-style(#202020, white, 2rem);
   cursor: pointer;
 }
 
 .button.primary {
-  background-color: @primary-color;
-  color: white;
+  .button-style(white, @primary-color);
 }
 
 .container {
