@@ -1,0 +1,327 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #202020;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  color: #e7e7e7;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+p {
+  margin: 20px 0;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+.button {
+  display: inline-block;
+  padding: 0.5em;
+  min-width: 150px;
+  border-radius: 5px;
+  border: none;
+  line-height: 1em;
+  color: #202020;
+  background-color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #e6e6e6;
+}
+.button.primary {
+  color: white;
+  background-color: dodgerblue;
+  font-size: 2rem;
+}
+.button.primary:hover {
+  background-color: #006ad1;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+strong {
+  font-weight: bold;
+  color: dodgerblue;
+}
+header {
+  border-bottom: 1px solid #9a9a9a;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+}
+header h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  header h1 {
+    margin-bottom: 20px;
+  }
+}
+header nav {
+  display: flex;
+  flex-direction: null;
+  justify-content: null;
+  align-items: center;
+  flex-wrap: null;
+  margin-left: 62px;
+}
+header nav a {
+  margin-left: 20px;
+  font-size: 1.8rem;
+}
+header nav .first-anchor {
+  margin-left: 0;
+}
+@media (max-width: 800px) {
+  header nav {
+    margin-left: 0;
+  }
+}
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: null;
+    align-items: center;
+    flex-wrap: null;
+  }
+}
+.header-img-container {
+  position: relative;
+  margin-bottom: 70px;
+}
+.header-img-content {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-img-content h1 {
+  font-size: 5.4rem;
+  color: white;
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) {
+  .header-img-content h1 {
+    font-size: 3.8rem;
+  }
+}
+@media (max-width: 700px) {
+  .cta-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: null;
+  }
+  .cta-buttons-container button {
+    max-width: 250px;
+    margin-bottom: 12px;
+  }
+}
+.main-content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  display: flex;
+  margin-bottom: 70px;
+}
+@media (max-width: 515px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+.main-content section {
+  width: 50%;
+  padding: 0 16px;
+}
+@media (max-width: 515px) {
+  .main-content section {
+    width: 100%;
+  }
+}
+.main-footer {
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  border-top: 1px solid #9a9a9a;
+  padding-top: 40px;
+}
+.main-footer nav {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.book-flight-btn {
+  display: block;
+  margin: 0 auto 40px;
+}
+@media (max-width: 515px) {
+  .book-flight-btn {
+    width: 90%;
+    height: 50px;
+    font-size: 2.5rem;
+  }
+}

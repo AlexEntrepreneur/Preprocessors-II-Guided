@@ -1,0 +1,19 @@
+.flex-center() {
+  display: flex;
+  align-items: center;
+}
+
+.flexbox(@flex-dir:row, @just-cont:flex-start, @align-items: stretch, @wrap:nowrap) {
+  display: flex;
+  flex-direction: @flex-dir;
+  justify-content: @just-cont;
+  align-items: @align-items;
+  flex-wrap: @wrap;
+}
+
+// Amin
+.button-style(@color, @bg-color, @font-size) {
+  color: @color;
+  background-color: @bg-color;
+  font-size: @font-size;
+}
