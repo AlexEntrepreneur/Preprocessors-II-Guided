@@ -87,7 +87,7 @@ header {
   }
 
   nav {
-    .flexbox(null, null, center, null);
+    .flexbox(@align-items: center);
     margin-left: 62px;
 
     a {
@@ -106,7 +106,7 @@ header {
   }
 
   @media @tablet-big {
-    .flexbox(column, null, center, null);
+    .flexbox(@flex-dir: column; @align-items:center);
   }
 }
 
@@ -136,7 +136,7 @@ header {
 
 .cta-buttons-container {
   @media @tablet {
-    .flexbox(column, center, center, null);
+    .flexbox(@flex-dir: column; @just-cont: center; @align-items: center);
 
     button {
       max-width: 250px;
@@ -146,8 +146,7 @@ header {
 }
 
 .main-content {
-  .flexbox(row, space-between, stretch, wrap);
-  display: flex;
+  .flexbox(@just-cont: space-between; @wrap: wrap);
   margin-bottom: 70px;
 }
 
@@ -176,7 +175,7 @@ header {
   
   nav {
     width: 90%;
-    .flexbox(row, space-around, stretch);
+    .flexbox(@just-cont: space-around);
   }
 }
 

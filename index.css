@@ -212,10 +212,10 @@ header h1 {
 }
 header nav {
   display: flex;
-  flex-direction: null;
-  justify-content: null;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  flex-wrap: null;
+  flex-wrap: nowrap;
   margin-left: 62px;
 }
 header nav a {
@@ -234,9 +234,9 @@ header nav .first-anchor {
   header {
     display: flex;
     flex-direction: column;
-    justify-content: null;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap: null;
+    flex-wrap: nowrap;
   }
 }
 .header-img-container {
@@ -267,7 +267,7 @@ header nav .first-anchor {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: null;
+    flex-wrap: nowrap;
   }
   .cta-buttons-container button {
     max-width: 250px;
@@ -275,11 +275,11 @@ header nav .first-anchor {
   }
 }
 .main-content {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
-  display: flex;
   margin-bottom: 70px;
 }
 @media (max-width: 515px) {
